@@ -13,10 +13,12 @@ namespace FreeDataExports.Spreadsheets.XL2019
         public string FormattedValue { get; set; }
         public DataType DataType { get; set; }
         public string Errors { get; set; }
+        public bool Bold { get; set; }   //bold font or not
         public Cell(object value, DataType data)
         {
             DataType = data;
             Value = GetValue(value);
+            Bold = false;
         }
 
         /// <summary>

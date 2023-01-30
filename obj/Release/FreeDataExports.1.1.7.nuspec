@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>FreeDataExports</id>
+    <version>1.1.7</version>
+    <authors>Ryan A. Kueter</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>Icon.jpg</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/ryankueter/FreeDataExports</projectUrl>
+    <description>A .NET library that allows you to export your data to a spreadsheet, including .xlsx (2019), .ods (1.3), and .csv files.</description>
+    <releaseNotes>Added a .Net 7 target and collection iteration optimizations using spans.</releaseNotes>
+    <copyright>Ryan A. Kueter</copyright>
+    <tags>C# Spreadsheets</tags>
+    <repository type="Git" url="https://github.com/ryankueter/FreeDataExports" />
+    <dependencies>
+      <group targetFramework="net6.0" />
+      <group targetFramework="net7.0" />
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\prg\pc\FreeDataExports\bin\Release\net6.0\FreeDataExports.dll" target="lib\net6.0\FreeDataExports.dll" />
+    <file src="D:\prg\pc\FreeDataExports\bin\Release\net7.0\FreeDataExports.dll" target="lib\net7.0\FreeDataExports.dll" />
+    <file src="D:\prg\pc\FreeDataExports\bin\Release\netstandard2.0\FreeDataExports.dll" target="lib\netstandard2.0\FreeDataExports.dll" />
+    <file src="D:\prg\pc\Artwork\Icon.jpg" target="Icon.jpg" />
+    <file src="D:\prg\pc\FreeDataExports\README.md" target="\README.md" />
+    <file src="D:\prg\pc\FreeDataExports\LICENSE" target="LICENSE" />
+  </files>
+</package>

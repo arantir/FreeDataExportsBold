@@ -36,9 +36,9 @@ namespace FreeDataExports.Spreadsheets.Ods1_3
             return this;
         }
 
-        public IDataWorksheet AddCell(object Data, DataType Type)
+        public IDataWorksheet AddCell(object Data, DataType Type, bool bold)
         {
-            CurrentRow.Add(new Cell(Data, Type));
+            CurrentRow.Add(new Cell(Data, Type, bold));
             return this;
         }
 

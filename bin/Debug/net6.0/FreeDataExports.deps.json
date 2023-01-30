@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FreeDataExports/1.1.7": {
+        "runtime": {
+          "FreeDataExports.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FreeDataExports/1.1.7": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

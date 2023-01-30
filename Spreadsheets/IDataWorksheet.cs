@@ -9,7 +9,7 @@ namespace FreeDataExports
     {
         string Name { get; }
         IDataWorksheet AddRow();
-        IDataWorksheet AddCell(object Data, DataType Type);
+        IDataWorksheet AddCell(object Data, DataType Type, bool bold);
         string TabColor { get; set; }
         void ColumnWidths(params string[] columnWidths);
     }

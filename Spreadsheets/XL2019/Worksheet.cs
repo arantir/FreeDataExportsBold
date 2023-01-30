@@ -46,7 +46,7 @@ namespace FreeDataExports.Spreadsheets.XL2019
             return this;
         }
 
-        public IDataWorksheet AddCell(object Data, DataType Type)
+        public IDataWorksheet AddCell(object Data, DataType Type, bool bold)
         {
             CurrentRow.Add(new Cell(Data, Type));
             return this;

@@ -1,0 +1,12 @@
+D:\prg\pc\FreeDataExports\bin\Release\net6.0\FreeDataExports.deps.json
+D:\prg\pc\FreeDataExports\bin\Release\net6.0\FreeDataExports.dll
+D:\prg\pc\FreeDataExports\bin\Release\net6.0\FreeDataExports.pdb
+D:\prg\pc\FreeDataExports\obj\Release\net6.0\FreeDataExports.csproj.AssemblyReference.cache
+D:\prg\pc\FreeDataExports\obj\Release\net6.0\FreeDataExports.GeneratedMSBuildEditorConfig.editorconfig
+D:\prg\pc\FreeDataExports\obj\Release\net6.0\FreeDataExports.AssemblyInfoInputs.cache
+D:\prg\pc\FreeDataExports\obj\Release\net6.0\FreeDataExports.AssemblyInfo.cs
+D:\prg\pc\FreeDataExports\obj\Release\net6.0\FreeDataExports.csproj.CoreCompileInputs.cache
+D:\prg\pc\FreeDataExports\obj\Release\net6.0\FreeDataExports.dll
+D:\prg\pc\FreeDataExports\obj\Release\net6.0\refint\FreeDataExports.dll
+D:\prg\pc\FreeDataExports\obj\Release\net6.0\FreeDataExports.pdb
+D:\prg\pc\FreeDataExports\obj\Release\net6.0\ref\FreeDataExports.dll

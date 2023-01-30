@@ -163,7 +163,7 @@ namespace FreeDataExports.Spreadsheets.Ods1_3
 
                     // Create settings.xml
                     AddEntry(archive, "settings.xml", settings());
-
+                    
                     // Create styles.xml
                     AddEntry(archive, "styles.xml", styles());
 
@@ -314,7 +314,7 @@ namespace FreeDataExports.Spreadsheets.Ods1_3
                 var e = new Worksheet("Errors");
                 for (int i = 0; i < Errors.Count; i++)
                 {
-                    e.AddRow().AddCell(Errors[i], DataType.String);
+                    e.AddRow().AddCell(Errors[i], DataType.String, false);
                 }
                 e.TabColor = "#FF3838";
                 Worksheets.Add(e);
@@ -505,6 +505,7 @@ namespace FreeDataExports.Spreadsheets.Ods1_3
                     new XAttribute(office + "version", "1.3"),
                     new XElement(office + "font-face-decls",
                         new XElement(style + "font-face", new XAttribute(style + "name", "Liberation Sans"), new XAttribute(svg + "font-family", "'Liberation Sans'"), new XAttribute(style + "font-family-generic", "swiss"), new XAttribute(style + "font-pitch", "variable")),
+                        //new XElement(style + "font-face", new XAttribute(style + "name", "Bahnschrift SemiBold"), new XAttribute(svg + "font-family", "'Bahnschrift'"), new XAttribute(style + "font-family-generic", "swiss"), new XAttribute(style + "font-pitch", "variable")),
                         new XElement(style + "font-face", new XAttribute(style + "name", "Lucida Sans"), new XAttribute(svg + "font-family", "'Lucida Sans'"), new XAttribute(style + "font-family-generic", "system"), new XAttribute(style + "font-pitch", "variable")),
                         new XElement(style + "font-face", new XAttribute(style + "name", "Microsoft YaHei"), new XAttribute(svg + "font-family", "'Microsoft YaHei'"), new XAttribute(style + "font-family-generic", "system"), new XAttribute(style + "font-pitch", "variable"))),
                     new XElement(office + "styles",
@@ -512,6 +513,7 @@ namespace FreeDataExports.Spreadsheets.Ods1_3
                             new XElement(style + "paragraph-properties", new XAttribute(style + "tab-stop-distance", "0.5in")),
                             new XElement(style + "text-properties",
                                 new XAttribute(style + "font-name", "Liberation Sans"),
+                                //new XAttribute(style + "font-name", "Bahnschrift SemiBold"),
                                 new XAttribute(fo + "language", "en"),
                                 new XAttribute(fo + "country", "US"),
                                 new XAttribute(style + "font-name-asian", "Microsoft YaHei"),
@@ -1103,6 +1105,7 @@ namespace FreeDataExports.Spreadsheets.Ods1_3
                     new XElement(office + "scripts"),
                     new XElement(office + "font-face-decls",
                         new XElement(style + "font-face", new XAttribute(style + "name", "Liberation Sans"), new XAttribute(svg + "font-family", "'Liberation Sans'"), new XAttribute(style + "font-family-generic", "swiss"), new XAttribute(style + "font-pitch", "variable")),
+                        //new XElement(style + "font-face", new XAttribute(style + "name", "Bahnschrift SemiBold"), new XAttribute(svg + "font-family", "'Bahnschrift'"), new XAttribute(style + "font-family-generic", "swiss"), new XAttribute(style + "font-pitch", "variable")),
                         new XElement(style + "font-face", new XAttribute(style + "name", "Lucida Sans"), new XAttribute(svg + "font-family", "'Lucida Sans'"), new XAttribute(style + "font-family-generic", "system"), new XAttribute(style + "font-pitch", "variable")),
                         new XElement(style + "font-face", new XAttribute(style + "name", "Microsoft YaHei"), new XAttribute(svg + "font-family", "'Microsoft YaHei'"), new XAttribute(style + "font-family-generic", "system"), new XAttribute(style + "font-pitch", "variable"))),
                     automatic_styles,
@@ -1310,8 +1313,18 @@ namespace FreeDataExports.Spreadsheets.Ods1_3
             switch (cell.DataType)
             {
                 case DataType.String:
-                    x = new XElement(table + "table-cell", new XAttribute(table + "style-name", $"ce1"), new XAttribute(office + "value-type", "string"), new XAttribute(calcext + "value-type", "string"),
-                        new XElement(text + "p", cell.Value));
+                    //x = new XElement(table + "table-cell", new XAttribute(table + "style-name", $"ce1"), new XAttribute(office + "value-type", "string"), new XAttribute(calcext + "value-type", "string"),
+                    //new XElement(text + "p", cell.Value));
+                    if (cell.Bold)
+                    {
+                        x = new XElement(table + "table-cell", new XAttribute(table + "style-name", $"Accent"), new XAttribute(office + "value-type", "string"), new XAttribute(calcext + "value-type", "string"),
+                            new XElement(text + "p", cell.Value));
+                    }
+                    else
+                    {
+                        x = new XElement(table + "table-cell", new XAttribute(table + "style-name", $"ce1"), new XAttribute(office + "value-type", "string"), new XAttribute(calcext + "value-type", "string"),
+                            new XElement(text + "p", cell.Value));
+                    }
                     break;
                 case DataType.DateTime:
                     x = new XElement(table + "table-cell", new XAttribute(table + "style-name", $"ce{index}"), new XAttribute(office + "value-type", "date"), new XAttribute(office + "date-value", cell.Value), new XAttribute(calcext + "value-type", "date"),

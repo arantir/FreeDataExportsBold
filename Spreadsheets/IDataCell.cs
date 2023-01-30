@@ -11,5 +11,6 @@ namespace FreeDataExports
         string FormattedValue { get; set; }
         DataType DataType { get; set; }
         string Errors { get; set; }
+        bool Bold { get; set; }   //bold font or not
     }
 }

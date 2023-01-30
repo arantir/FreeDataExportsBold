@@ -328,7 +328,7 @@ namespace FreeDataExports.Spreadsheets.XL2019
                 e.Id = id;
                 for (int i = 0; i < Errors.Count; i++)
                 {
-                    e.AddRow().AddCell(Errors[i], DataType.String);
+                    e.AddRow().AddCell(Errors[i], DataType.String, false);
                 }
                 e.TabColor = "FFC00000";
                 Worksheets.Add(e);

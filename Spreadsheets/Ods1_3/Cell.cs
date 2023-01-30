@@ -18,16 +18,18 @@ namespace FreeDataExports.Spreadsheets.Ods1_3
         public string FormattedValue { get; set; } // The final value
         public DataType DataType { get; set; } // The datatype specified
         public string Errors { get; set; } // Stores conversion errors
+        public bool Bold { get; set; }   //bold font or not
 
         /// <summary>
         /// The constructor for the cell.
         /// </summary>
         /// <param name="value">The value to store in the cell.</param>
         /// <param name="data">The value's datatype.</param>
-        public Cell(object value, DataType data)
+        public Cell(object value, DataType data, bool bold)
         {
             DataType = data;
             Value = GetValue(value);
+            Bold = bold;
         }
 
         /// <summary>
