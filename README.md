@@ -1,3 +1,5 @@
+Now u can set bolf font for any cell with method AddCell. Work on OpenOffice only.
+
 # Free Data Exports (.NET)
 
 Author: Ryan Kueter  
